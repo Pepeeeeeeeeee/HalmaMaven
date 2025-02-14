@@ -2,7 +2,7 @@
 
 ## 1. First Clone
 1. Open any terminal and navigate to the location where you want to save this project locally.
-2. Once there, type `git clone https://github.com/Pepeeeeeeeeee/Halma.git` into the terminal.
+2. Once there, type `git clone https://github.com/Pepeeeeeeeeee/HalmaMaven.git` into the terminal.
 3. You should now have the project stored locally.
 4. If this didn’t work, try initializing Git first by typing `git init` before attempting to clone the repository again.
 
