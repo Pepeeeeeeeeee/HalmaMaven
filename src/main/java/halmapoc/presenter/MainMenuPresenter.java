@@ -1,5 +1,7 @@
 package halmapoc.presenter;
 
+import halmapoc.extraUtil.Router;
+import halmapoc.extraUtil.StageName;
 import halmapoc.model.AppNameModel;
 import halmapoc.view.GameRulesView;
 import halmapoc.view.LoginView;
@@ -23,31 +25,19 @@ public class MainMenuPresenter {
     }
     private void addEventHandlers() {
         view.getLogin().setOnMouseClicked(_ -> {
-            LoginView view = new LoginView(); //making new view
-            Scene scene = new Scene(view); //making new scene
-            scene.getStylesheets().add("/style/login.css"); //binding css file
-            new LoginPresenter(model, view, stage); //making new presenter
-            stage.setScene(scene); //setting and showing new scene
+            Router.routerLogin(stage, StageName.MAINMENU, StageName.LOGIN);
         }); //changes the scene for the 'login scene'
 
         view.getRegister().setOnMouseClicked(_ -> {
-            RegisterView view = new RegisterView();
-            Scene scene = new Scene(view);
-            scene.getStylesheets().add("/style/login.css");
-            new RegisterPresenter(model, view, stage);
-            stage.setScene(scene);
+            Router.routerRegister(stage, StageName.MAINMENU, StageName.REGISTER);
         });
 
         view.getGamerules().setOnMouseClicked(_ -> {
-            GameRulesView view = new GameRulesView(); //making new view
-            Scene scene = new Scene(view); //making new scene
-            scene.getStylesheets().add("/style/gamerules.css"); //binding css file
-            new GameRulesPresenter(model, view, stage); //making new presenter
-            stage.setScene(scene); //setting and showing new scene
+            Router.routerGameRules(stage, StageName.MAINMENU, StageName.GAMERULES);
         });
 
         view.getExit().setOnMouseClicked(_ -> {
-            System.exit(0);
+            Router.routerExit();
         });
     }
     private void updateView() {

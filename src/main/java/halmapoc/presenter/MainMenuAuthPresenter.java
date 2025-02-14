@@ -1,5 +1,7 @@
 package halmapoc.presenter;
 
+import halmapoc.extraUtil.Router;
+import halmapoc.extraUtil.StageName;
 import halmapoc.model.AppNameModel;
 import halmapoc.view.GameRulesView;
 import halmapoc.view.MainMenuAuthView;
@@ -21,11 +23,7 @@ public class MainMenuAuthPresenter {
 
     private void addEventHandlers() {
         view.getGamerules().setOnMouseClicked(_ -> {
-            GameRulesView view = new GameRulesView(); //making new view
-            Scene scene = new Scene(view); //making new scene
-            scene.getStylesheets().add("/style/gamerules.css"); //binding css file
-            new GameRulesPresenter(model, view, stage); //making new presenter
-            stage.setScene(scene); //setting and showing new scene
+            Router.routerGameRules(stage, StageName.MAINMENUAUTH, StageName.GAMERULES);
         }); //changes the scene for the 'login scene'
     }
 }

@@ -1,5 +1,7 @@
 package halmapoc.presenter;
 
+import halmapoc.extraUtil.Router;
+import halmapoc.extraUtil.StageName;
 import halmapoc.model.AppNameModel;
 import halmapoc.view.LoginView;
 import halmapoc.view.MainMenuAuthView;
@@ -21,20 +23,16 @@ public class LoginPresenter {
     }
 
     private void addEventHandlers() {
-        view.getLogin().setOnMouseClicked(event -> {
-            MainMenuAuthView view = new MainMenuAuthView();
-            Scene scene = new Scene(view);
-            scene.getStylesheets().add("/style/mainmenu.css");
-            new MainMenuAuthPresenter(model, view, stage);
-            stage.setScene(scene);
+        view.getLogin().setOnMouseClicked(_ -> {
+            Router.routerMainMenuAuth(stage, StageName.LOGIN, StageName.MAINMENUAUTH);
         });
 
-        view.getRegister().setOnMouseClicked(event -> {
-            RegisterView view = new RegisterView();
-            Scene scene = new Scene(view);
-            scene.getStylesheets().add("/style/login.css");
-            new RegisterPresenter(model, view, stage);
-            stage.setScene(scene);
+        view.getRegister().setOnMouseClicked(_ -> {
+            Router.routerRegister(stage, StageName.LOGIN, StageName.REGISTER);
+        });
+
+        view.getBack().setOnMouseClicked(_ -> {
+            Router.routerBack(StageName.LOGIN, StageName.MAINMENU);
         });
     }
 }

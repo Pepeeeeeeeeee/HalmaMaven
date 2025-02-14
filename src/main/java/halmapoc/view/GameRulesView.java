@@ -19,7 +19,6 @@ public class GameRulesView extends BorderPane {
     private Button back;
     private Label title;
     private Image image;
-    private Image image2;
     private ColumnConstraints columnConstraints;
     private ColumnConstraints columnConstraints2;
     private RowConstraints rowConstraints;
@@ -28,6 +27,10 @@ public class GameRulesView extends BorderPane {
     public GameRulesView() {
         initialiseNodes();
         layoutNodes();
+    }
+
+    public Button getBack() {
+        return back;
     }
 
     private void initialiseNodes() {
