@@ -36,6 +36,15 @@ public class LoginView extends BorderPane {
     public Button getBack() {
         return back;
     }
+
+    public TextField getUsername() {
+        return username;
+    }
+
+    public TextField getPassword() {
+        return password;
+    }
+
     private void initialiseNodes() {
         username = new TextField();
         username.setPromptText("Please enter your Username...");

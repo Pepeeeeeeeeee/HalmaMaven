@@ -1,5 +1,6 @@
 package halmapoc;
 
+import halmapoc.extraUtil.DBTests;
 import halmapoc.model.AppNameModel;
 import halmapoc.presenter.MainMenuPresenter;
 import halmapoc.view.MainMenuView;
@@ -10,6 +11,11 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
+        try{
+            DBTests.runTests();
+        }catch (InterruptedException e){
+            System.err.println(e.getMessage());
+        }
         AppNameModel model = new AppNameModel();
 
         MainMenuView view = new MainMenuView();

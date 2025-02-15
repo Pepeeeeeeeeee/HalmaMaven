@@ -2,14 +2,17 @@ package halmapoc.presenter;
 
 import halmapoc.extraUtil.Router;
 import halmapoc.extraUtil.StageName;
+import halmapoc.managers.AuthManager;
 import halmapoc.model.AppNameModel;
+import halmapoc.model.PlayerModel;
 import halmapoc.view.LoginView;
 import halmapoc.view.MainMenuAuthView;
 import halmapoc.view.RegisterView;
+import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class LoginPresenter {
+public class LoginPresenter extends AuthManager {
     private AppNameModel model;
     private LoginView view;
     private Stage stage;
@@ -24,6 +27,12 @@ public class LoginPresenter {
 
     private void addEventHandlers() {
         view.getLogin().setOnMouseClicked(_ -> {
+            PlayerModel player = login(view.getUsername().getText(), view.getPassword().getText());
+            while(player == null){
+                view.getUsername().clear();
+                view.getPassword().clear();
+                player = login(view.getUsername().getText(), view.getPassword().getText());
+            }
             Router.routerMainMenuAuth(stage, StageName.LOGIN, StageName.MAINMENUAUTH);
         });
 

@@ -34,6 +34,18 @@ public class RegisterView extends BorderPane {
         return login;
     }
 
+    public TextField getUsername() {
+        return username;
+    }
+
+    public TextField getPassword() {
+        return password;
+    }
+
+    public TextField getPasswordConfirm() {
+        return passwordConfirm;
+    }
+
     private void initialiseNodes() {
         username = new TextField();
         username.setPromptText("Please enter your Username...");
