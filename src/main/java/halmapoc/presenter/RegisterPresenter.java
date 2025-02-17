@@ -28,13 +28,9 @@ public class RegisterPresenter extends AuthManager {
     private void addEventHandlers() {
         view.getRegister().setOnMouseClicked(_ -> {
             PlayerModel player = register(view.getUsername().getText(), view.getPassword().getText(), view.getPasswordConfirm().getText());
-            while(player == null){
-                view.getUsername().clear();
-                view.getPassword().clear();
-                view.getPasswordConfirm().clear();
-                player = register(view.getUsername().getText(), view.getPassword().getText(), view.getPasswordConfirm().getText());
+            if(player != null){
+                Router.routerMainMenuAuth(stage, StageName.REGISTER, StageName.MAINMENUAUTH);
             }
-            Router.routerMainMenuAuth(stage, StageName.REGISTER, StageName.MAINMENUAUTH);
         });
 
         view.getLogin().setOnMouseClicked(_ -> {

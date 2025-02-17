@@ -27,13 +27,10 @@ public class LoginPresenter extends AuthManager {
 
     private void addEventHandlers() {
         view.getLogin().setOnMouseClicked(_ -> {
-            PlayerModel player = login(view.getUsername().getText(), view.getPassword().getText());
-            while(player == null){
-                view.getUsername().clear();
-                view.getPassword().clear();
-                player = login(view.getUsername().getText(), view.getPassword().getText());
+            PlayerModel player = login(view.getUsername().getText(), view.getPasswordField().getText());
+            if(player != null) {
+                Router.routerMainMenuAuth(stage, StageName.LOGIN, StageName.MAINMENUAUTH);
             }
-            Router.routerMainMenuAuth(stage, StageName.LOGIN, StageName.MAINMENUAUTH);
         });
 
         view.getRegister().setOnMouseClicked(_ -> {

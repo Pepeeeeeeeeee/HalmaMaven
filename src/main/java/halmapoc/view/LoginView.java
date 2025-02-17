@@ -1,9 +1,8 @@
 package halmapoc.view;
 
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.skin.TextFieldSkin;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -11,7 +10,8 @@ import javafx.scene.shape.Circle;
 
 public class LoginView extends BorderPane {
     private TextField username;
-    private TextField password;
+//    private TextField password;
+    private PasswordField passwordField;
     private Button login;
     private Button back;
     private Label title;
@@ -41,15 +41,21 @@ public class LoginView extends BorderPane {
         return username;
     }
 
-    public TextField getPassword() {
-        return password;
+//    public TextField getPassword() {
+//        return password;
+//    }
+
+    public PasswordField getPasswordField() {
+        return passwordField;
     }
 
     private void initialiseNodes() {
         username = new TextField();
         username.setPromptText("Please enter your Username...");
-        password = new TextField();
-        password.setPromptText("Please enter your Password...");
+//        password = new TextField();
+        passwordField = new PasswordField();
+        passwordField.setPromptText("Please enter your Password...");
+//        password.setPromptText("Please enter your Password...");
         login = new Button("Login");
         back = new Button("back");
         register = new Label("Do not have an account ? Register now!");
@@ -75,14 +81,14 @@ public class LoginView extends BorderPane {
         }); //event listener for title position (doesn't work properly yet)
 
         setCenter(vbox); //setting vbox position relative to border pane
-        vbox.getChildren().addAll( circle, username, password, login, register);
-
+        vbox.getChildren().addAll( circle, username, /*password*/ passwordField, login, register);
 
         circle.setId("avatar");
         circle.setRadius(50);
 
         username.setId("username");
-        password.setId("password");
+//        password.setId("password");
+        passwordField.setId("password");
 
         login.setId("login");
         register.setId("register");

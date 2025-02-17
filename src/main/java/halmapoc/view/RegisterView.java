@@ -3,6 +3,7 @@ package halmapoc.view;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -11,8 +12,8 @@ import javafx.scene.shape.Circle;
 
 public class RegisterView extends BorderPane {
     private TextField username;
-    private TextField password;
-    private TextField passwordConfirm;
+    private PasswordField password;
+    private PasswordField passwordConfirm;
     private Button register;
     private Button back;
     private Label title;
@@ -38,20 +39,20 @@ public class RegisterView extends BorderPane {
         return username;
     }
 
-    public TextField getPassword() {
+    public PasswordField getPassword() {
         return password;
     }
 
-    public TextField getPasswordConfirm() {
+    public PasswordField getPasswordConfirm() {
         return passwordConfirm;
     }
 
     private void initialiseNodes() {
         username = new TextField();
         username.setPromptText("Please enter your Username...");
-        password = new TextField();
+        password = new PasswordField();
         password.setPromptText("Please enter your Password...");
-        passwordConfirm = new TextField();
+        passwordConfirm = new PasswordField();
         passwordConfirm.setPromptText("Please confirm your Password...");
         register = new Button("Register");
         back = new Button("back");

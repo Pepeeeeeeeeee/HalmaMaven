@@ -25,5 +25,8 @@ public class MainMenuAuthPresenter {
         view.getGamerules().setOnMouseClicked(_ -> {
             Router.routerGameRules(stage, StageName.MAINMENUAUTH, StageName.GAMERULES);
         }); //changes the scene for the 'login scene'
+        view.getExit().setOnMouseClicked(_ -> {
+            Router.routerExit();
+        });
     }
 }
