@@ -40,19 +40,19 @@ String connectionUrl = "jdbc:postgresql://localhost:5432/Test?user=postgres&pass
 - **user=postgres**: The database owner name. This may vary depending on how you set up the server.
 - **password=Student_1234**: The database password. This may vary depending on your setup steps.
 
-5.4 Change the connection string values as needed.
+4.4 Change the connection string values as needed.
 
 **Note:** Before doing this step, test if you can access the database through the connection string. If successful, you can skip Step 6.
 
-## 6. Add a JDBC Driver Dependency (if necessary)
+## 5. Add a JDBC Driver Dependency (if necessary)
 
-6.0 Download the JDBC driver from [https://jdbc.postgresql.org/download/](https://jdbc.postgresql.org/download/).  
-6.1 In IntelliJ, click on **File** in the top left corner and select **Project Structure**.  
-6.2 On the left panel, select **Modules**.  
-6.3 On the right part of the window, select **Dependencies**.  
-6.4 Click the **+** icon under **Module SDK**.  
-6.5 Select **JARs or Directories**.  
-6.6 A new window will open. Select the downloaded JDBC driver (the `.jar` file).
+5.0 Download the JDBC driver from [https://jdbc.postgresql.org/download/](https://jdbc.postgresql.org/download/).  
+5.1 In IntelliJ, click on **File** in the top left corner and select **Project Structure**.  
+5.2 On the left panel, select **Modules**.  
+5.3 On the right part of the window, select **Dependencies**.  
+5.4 Click the **+** icon under **Module SDK**.  
+5.5 Select **JARs or Directories**.  
+5.6 A new window will open. Select the downloaded JDBC driver (the `.jar` file).
 
 Now you have a running database, and every time you run `Main`, it will check for table existence. In case the correct tables don't exist, it will create them.
 
